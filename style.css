@@ -1,27 +1,278 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Ubuntu', sans-serif; */
 }
 
-.header{
-    background-color: aqua;
+body{
+    font-size: 40px;
+    max-width: 100vw;
+    background-color: #0c101b;
+}
+
+.display{
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10vh;
+    color: inherit;
+}
+
+.title::after {
+    content: 'UNDERGROUND';
+    font-size: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    position: relative;
+    top: -70%;
+    color: rgb(255 255 255);
+    animation: zoom_in_out 5s ease-in 0.3s infinite alternate;
+}
+
+@keyframes zoom_in_out {
+    0% {
+        font-size: 60px;
+    }
+
+    100% {
+        font-size: 80px;
+        text-shadow: 0px 3px 3px white;
+    }
+}
+
+/* navbar css and hover effects */
+.navbar {
+    /* display: flex; */
+    background-color: rgb(255, 153, 19);
+    height: 12vh;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 70%, 85% 100%, 80% 70%, 0% 70%);
+    position: sticky;
+    top: -1px;
+    z-index: 3;
+}
+
+.navbar ul {
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    gap: 30px;
+    list-style: none;
+    padding-right: 20px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.navbar ul li {
+    transition-duration: 0.5s;
+}
+
+
+.navbar ul li::after{
+    content: '';
+    background-color: rgb(229, 158, 65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 3px;
+    width: 0%;
+    margin: auto;
+    margin-bottom: 0.5px;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+.navbar ul li:hover{
+    background-color: white;
+    border-radius: 10px 40px;
+    transform: translateX(20px);
+}
+.navbar ul li:hover::after{
+    width: 50%;
+}
+
+.navbar ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0px 10px;
+    margin: 0px 10px;    
+    color: rgb(118, 28, 174);
+}
+
+.navbar ul li a:active{
+    color: rgb(129, 129, 129);
+}
+
+/* header css */
+
+#header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.772)), url(images/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10vh;
+}
+
+.head{
+    border: 2px solid rgb(255, 153, 19);
+    width: 60%;
+    min-height: fit-content;
+    max-height: 80vh;
+}
+
+.head p{
+    color: aliceblue;
+    font-size: 2rem;
+    padding: 1em;
+    text-align: justify;
+}
+
+.display img{
+    height: 78vh;
+    border-radius: 0px 40px;
+    animation: shadow 2s ease-in 0s infinite alternate;
+}
+
+@keyframes shadow {
+    0%{
+        box-shadow: 0px 0px 1px whitesmoke;
+    }
+    
+    100%{
+        box-shadow: 0px 0px 20px whitesmoke;    
+    }
+}
+
+.title {
+    color: rgba(245, 245, 220, 0);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    text-align: center;
+    font-size: 3em;
+    height: 20vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(images/bg2.jpg);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+/* main css */
+
+#main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.772)), url(images/bg3.jpg);
     height: 100vh;
     width: 100%;
 }
 
-.main{
-    background-color: green;
+/* about css */
+
+#about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(images/bg4.jpg);
     height: 100vh;
     width: 100%;
+    color: rgb(84, 2, 30);
 }
-.about{
-    background-color: red;
-    height: 100vh;
-    width: 100%;
+
+#about p{
+    color: inherit;
 }
-.footer{
-    background-color: blue;
+
+#about .head{
+    border-color: rgb(81, 6, 31);
+}
+
+/* contact css */
+
+#contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(images/bg5.jpg);
     height: 100vh;
     width: 100%;
+    flex-direction: column;
+    color: antiquewhite;
+}
+
+#contact h1{
+    border: 3px solid rgb(255, 153, 19);
+    padding: 13px;
+}
+
+#contact h1:hover{
+    background-image: linear-gradient(transparent, transparent, rgba(18, 224, 207, 0.374), transparent, transparent);
+}
+
+#contact div {
+    display: flex;
+    padding: 0px 22px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+#contact div .contact {
+    font-size: 0.8em;
+}
+
+#contact div .contact ul{
+    list-style: none;
+}
+
+#contact div .contact ul li{
+    margin-bottom: 6px;
+}
+
+.map{
+    display: flex;
+    flex-direction: column;
+}
+
+#contact div .map img{
+    height: 350px;
+    vertical-align: middle;
+    transition: all 0.5s ease-in-out;
+}
+
+#contact div .map p{
+    color: rgb(109, 106, 106);
+    position: relative;
+    top: -205px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+#contact div .map:hover img{
+    filter:blur(1px);
+    transform: scale(1.1);
+}
+
+#contact div .map:hover p{
+    font-size: 0.95em;
+}
+
+#contact div .contact ul li a{
+    /* float: right; */
+}
+
+#contact div .contact ul li a, #contact div .contact ul li b{
+    color: rgb(239, 207, 165);
+    transition: all 0.5s ease-in-out;
+}
+#contact div .contact ul li:hover a {
+    color: rgba(255, 153, 19, 0);
+    background-image: linear-gradient(90deg, #00cbff, #47e172, #fdec8d);
+    -webkit-background-clip: text;    
+    cursor: pointer;
 }
